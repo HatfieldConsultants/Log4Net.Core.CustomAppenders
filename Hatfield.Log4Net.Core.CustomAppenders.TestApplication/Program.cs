@@ -41,6 +41,7 @@ namespace Hatfield.Log4Net.Core.CustomAppenders.TestApplication
             var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
             XmlConfigurator.Configure(logRepository, configFile);
 
+            // https://dev.mercymainb.tw/2018/10/19/dotnetcore-log4net/
             _log = LogManager.GetLogger(repositoryAssembly, repositoryAssembly.ManifestModule.Name.Replace(".dll", "").Replace(".", " "));
 
             _log.Warn("This should not trigger an email with default settings");
